@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "876878584230",
+    "project_id": "cuidapet-wilsonamorim",
+    "storage_bucket": "cuidapet-wilsonamorim.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876878584230:android:c178b3af22f413c4c31767",
+        "android_client_info": {
+          "package_name": "br.com.academiadoflutter.cuidapet_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB015Jfy8yBTM7Yj3LSWKwO7f_B2hVbtVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
