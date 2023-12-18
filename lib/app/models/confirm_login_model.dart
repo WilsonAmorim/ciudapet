@@ -12,15 +12,15 @@ class ConfirmLoginModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'access_Token': accessToken,
-      'refresh_Token': refreshToken,
+      'access_token': accessToken,
+      'refresh_token': refreshToken,
     };
   }
 
   factory ConfirmLoginModel.fromMap(Map<String, dynamic> map) {
     return ConfirmLoginModel(
-      accessToken: map['access_Token'] ?? '',
-      refreshToken: map['refresh_Token'] ?? '',
+      accessToken: map['access_token'] ?? '',
+      refreshToken: map['refresh_token'] ?? '',
     );
   }
 

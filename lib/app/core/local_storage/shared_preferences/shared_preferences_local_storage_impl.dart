@@ -1,7 +1,7 @@
 import 'package:cuidapet_mobile/app/core/local_storage/local_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class FlutterSharedPreferencesLocalStorageImpl implements LocalStorage {
+class SharedPreferencesLocalStorageImpl implements LocalStorage {
   Future<SharedPreferences> get _instance => SharedPreferences.getInstance();
 
   @override
@@ -19,7 +19,7 @@ class FlutterSharedPreferencesLocalStorageImpl implements LocalStorage {
   @override
   Future<V?> read<V>(String key) async {
     final sharedPreferences = await _instance;
-    return sharedPreferences.get(key) as V;
+    return sharedPreferences.get(key) as V?;
   }
 
   @override

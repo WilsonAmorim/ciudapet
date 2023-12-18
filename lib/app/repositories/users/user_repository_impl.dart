@@ -81,7 +81,7 @@ class UserRepositoryImpl implements UserRepository {
   @override
   Future<UserModel> getUserLogged() async {
     try {
-      final result = await _restClient.get('/user/');
+      final result = await _restClient.auth().get('/user/');
       return UserModel.fromMap(result.data);
     } on RestClientExeception catch (e, s) {
       _log.error('Erro ao buscar dados do usuário logado', e, s);
