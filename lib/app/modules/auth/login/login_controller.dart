@@ -2,6 +2,7 @@ import 'package:cuidapet_mobile/app/core/exceptions/failure.dart';
 import 'package:cuidapet_mobile/app/core/exceptions/user_not_exists_exception.dart';
 import 'package:cuidapet_mobile/app/core/logger/app_logger.dart';
 import 'package:cuidapet_mobile/app/core/ui/widgets/loader.dart';
+import 'package:cuidapet_mobile/app/models/social_login_type.dart';
 import 'package:cuidapet_mobile/app/modules/auth/login/widgets/messages.dart';
 import 'package:cuidapet_mobile/app/services/users/user_service.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -35,6 +36,19 @@ abstract class LoginControllerBase with Store {
       const errorMessage = 'Usuário não cadastrado';
       Loader.hide();
       Messages.alert(errorMessage);
+    }
+  }
+
+  Future<void> socialLogin(SocialLoginType socialLoginType) async {
+    try {
+      Loader.show();
+      await _userService.socialLogin(socialLoginType);
+      Loader.hide();
+      Modular.to.navigate('/auth/');
+    } on Failure catch (e, s) {
+      Loader.hide();
+      _log.error('Erro ao realizar login', e, s);
+      Messages.alert(e.message ?? 'Erro ao realizar login');
     }
   }
 }
